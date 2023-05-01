@@ -25,10 +25,18 @@ public class Main3 {
         GameInfo game5 = new GameInfo("Boston", "Florida", 0, 1);
 
 
-        Stream.of(game1, game2, game3, game4, game5)
-                .collect(Collectors.groupingBy(s -> s.getTeam1(), Collectors.counting()));
 
-        //System.out.println(persons2);
+        GameTeamResult boston = new GameTeamResult(Stream.of(
+                game1.getGoalsTeam1(),
+                game2.getGoalsTeam1(),
+                game3.getGoalsTeam1(),
+                game4.getGoalsTeam1(),
+                game5.getGoalsTeam1()
+                ));
+
+
+        System.out.println(Stream.of(game1, game2, game3, game4, game5)
+                .collect(Collectors.groupingBy(s -> s.getTeam1(), Collectors.counting())));
 
     }
 
