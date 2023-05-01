@@ -24,6 +24,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account {" + "person = " + person + ", iban = " + iban + ", balance = " + balance +"}";
+        return "iban:" + iban + ", balance:" + balance;
     }
 }
