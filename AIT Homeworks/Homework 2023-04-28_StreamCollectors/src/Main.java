@@ -31,9 +31,10 @@ public class Main {
                 )
                 .collect(Collectors.groupingBy(s -> s. getPerson()));
 
-        System.out.println("ДЗ №1 (через groupingBy): " + map1);
+        System.out.println("ДЗ №1 (через groupingBy): ");
+        map1.entrySet().forEach(System.out::println);
 
-
+        System.out.println("-------------------------------------");
         // 2. Через toMap.
 
         Map<Person, Account> map2 = Stream.of(
@@ -50,9 +51,10 @@ public class Main {
                 //.collect(Collectors.toMap(s -> s.getPerson(), s -> s, (s1, s2) -> (s1 + "|" + s2) ));
                 .collect(Collectors.toMap(s -> s.getPerson(), s->s, (s1,s2) -> s1 ));
 
-        System.out.println("ДЗ №1 (через toMap): " + map2);
+        //System.out.println("ДЗ №1 (через toMap): " + map2);
 
-        //map2.forEach(System.out::println);
+        System.out.println("ДЗ №1 (через toMap): ");
+        map2.entrySet().forEach(System.out::println);
 
     }
 }
