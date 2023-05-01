@@ -20,7 +20,7 @@ public class Main {
 
         List<Task> tasks2 = List.of(
                 new Task(1, "Backend", "в работе", 10),
-                new Task(2, "Frontend", "не начат", 0),
+                new Task(2, "Frontend", "не начат", 5),
                 new Task(3, "Design", "в работе", 2)
         );
 
@@ -48,6 +48,7 @@ public class Main {
         List res = programmers.stream()
                 .flatMap(programmer -> programmer.getTasks().stream())
                 .filter(t->t.getDaysInProcessing()>0)
+                .filter(t->t.getStatus().equals("в работе"))
                 //.sorted(Comparator.comparingInt(Task::getDaysInProcessing).reversed())
                 // или так:
                 .sorted(Comparator.comparingInt((Task t)->t.getDaysInProcessing()).reversed())
