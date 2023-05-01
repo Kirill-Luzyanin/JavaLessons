@@ -52,7 +52,7 @@ public class Main {
 
         System.out.println("ДЗ №1 (через toMap): " + map2);
 
-        //map1.forEach(System.out::println);
+        //map2.forEach(System.out::println);
 
     }
 }

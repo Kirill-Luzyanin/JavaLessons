@@ -29,13 +29,13 @@ public class Main2 {
         Person p6 = new Person("Виктор", 60);
         Person p7 = new Person("Вика", 54);
 
-        Map<Person, Long> personss = Stream.of(p1, p2, p3, p4, p5, p6,p7)
+        Map<Person, Long> persons = Stream.of(p1, p2, p3, p4, p5, p6,p7)
                 .collect(Collectors.groupingBy(s->s,Collectors.counting()));
 
-        System.out.println(personss);
+        System.out.println(persons);
 
 
-        Map<Person, Long> collect = Stream.of(
+        Map<Person, Long> persons2 = Stream.of(
                         new Person("Кирилл", 35),
                         new Person("Кирилл", 35),
                         new Person("Толя", 16),
@@ -46,9 +46,7 @@ public class Main2 {
                 )
                 .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
 
-        System.out.println(collect);
-
-        //System.out.println(newMap(persons));
+        System.out.println(persons2);
 
     }
 
@@ -58,7 +56,7 @@ public class Main2 {
 
         persons.collect(Collectors)
 
-        return persons.collect(Collectors.groupingBy(s->s, s->s.le))
+        return persons.collect(Collectors.groupingBy(s->s, s->s.length))
         //return result;
     }
 
